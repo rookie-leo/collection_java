@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TestandoCurso {
@@ -16,6 +18,17 @@ public class TestandoCurso {
         colecoes.adiciona(new Aula("Modelando com coleções", 23));
 
         colecoes.list();
+
+        List<Aula> aulasImutaveis = colecoes.getAulas();
+        System.out.println(aulasImutaveis);
+
+        List<Aula> aulasMutaveis = new ArrayList<>(aulasImutaveis);
+        Collections.sort(aulasMutaveis);
+        System.out.println(aulasMutaveis);
+
+        System.out.println("Tempo total de aulas " + colecoes.getTempoTotal());
+
+        System.out.println(colecoes);
     }
 
 }

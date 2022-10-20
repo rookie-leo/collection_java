@@ -34,4 +34,18 @@ public class Curso {
             System.out.println(aula);
         });
     }
+
+    public int getTempoTotal() {
+      return aulas.stream().mapToInt(Aula::getTempo).sum();
+    }
+
+    @Override
+    public String toString() {
+        return "Curso{" +
+                "nome= '" + nome + '\'' +
+                ", instrutor= '" + instrutor + '\'' +
+                ", aulas= " + aulas +
+                ", tempoTotal= " + getTempoTotal() +
+                '}';
+    }
 }
