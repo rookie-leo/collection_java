@@ -1,12 +1,11 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Curso {
 
     private String nome;
     private String instrutor;
     private List<Aula> aulas = new ArrayList<>();
+    private Set<Aluno> alunos = new HashSet<>();
 
     public Curso(String nome, String instrutor) {
         this.nome = nome;
@@ -25,11 +24,15 @@ public class Curso {
         return Collections.unmodifiableList(aulas);
     }
 
+    public Set<Aluno> getAlunos() {
+        return Collections.unmodifiableSet(alunos);
+    }
+
     public void adiciona(Aula aula) {
         aulas.add(aula);
     }
 
-    public void list() {
+    public void listaAulas() {
         aulas.forEach(aula -> {
             System.out.println(aula);
         });
@@ -39,6 +42,16 @@ public class Curso {
       return aulas.stream().mapToInt(Aula::getTempo).sum();
     }
 
+    public void matricula(Aluno aluno) {
+        alunos.add(aluno);
+    }
+
+    public void listaAlunos() {
+        alunos.forEach(aluno -> {
+            System.out.println(aluno);
+        });
+    }
+
     @Override
     public String toString() {
         return "Curso{" +
@@ -46,6 +59,7 @@ public class Curso {
                 ", instrutor= '" + instrutor + '\'' +
                 ", aulas= " + aulas +
                 ", tempoTotal= " + getTempoTotal() +
+                ", alunos= '" + getAlunos() + '\'' +
                 '}';
     }
 }

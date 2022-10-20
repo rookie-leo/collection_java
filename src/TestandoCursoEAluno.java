@@ -1,8 +1,6 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
-public class TestandoCurso {
+public class TestandoCursoEAluno {
 
     public static void main(String[] args) {
         Curso colecoes = new Curso("Java Efetivo", "Joshua Bloch");
@@ -17,7 +15,7 @@ public class TestandoCurso {
         colecoes.adiciona(new Aula("Criando uma Aula", 15));
         colecoes.adiciona(new Aula("Modelando com coleções", 23));
 
-        colecoes.list();
+        colecoes.listaAulas();
 
         List<Aula> aulasImutaveis = colecoes.getAulas();
         System.out.println(aulasImutaveis);
@@ -29,6 +27,25 @@ public class TestandoCurso {
         System.out.println("Tempo total de aulas " + colecoes.getTempoTotal());
 
         System.out.println(colecoes);
+
+        Aluno a1 = new Aluno("Kratos de Esparta", 12345);
+        Aluno a2 = new Aluno("Jin Sakai", 01656);
+        Aluno a3 = new Aluno("Lara Croft", 987654);
+        Set<Aluno> alunos = new HashSet<>();
+
+        colecoes.matricula(a1);
+        colecoes.matricula(a2);
+        colecoes.matricula(a3);
+
+        alunos.add(a1);
+        alunos.add(a2);
+        alunos.add(a3);
+
+        colecoes.listaAlunos();
+
+        alunos.forEach(aluno -> {
+            System.out.println("Aluno: " + aluno);
+        });
     }
 
 }
