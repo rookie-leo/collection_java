@@ -43,9 +43,23 @@ public class TestandoCursoEAluno {
 
         colecoes.listaAlunos();
 
-        alunos.forEach(aluno -> {
-            System.out.println("Aluno: " + aluno);
-        });
+        Iterator<Aluno> iterator = colecoes.getAlunos().iterator();
+
+        System.out.println("Iterator");
+
+        while(iterator.hasNext()) {
+            Aluno aluno = iterator.next();
+            System.out.println(aluno);
+        }
+
+//        alunos.forEach(aluno -> {
+//            System.out.println("Aluno: " + aluno);
+//        });
+//
+//        a1 = new Aluno("Desmond", 12345);
+//        a2 = new Aluno("Desmond", 54321);
+//
+//        System.out.println(a1.equals(a2));
     }
 
 }
