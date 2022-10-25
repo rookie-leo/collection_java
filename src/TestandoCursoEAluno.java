@@ -52,14 +52,14 @@ public class TestandoCursoEAluno {
             System.out.println(aluno);
         }
 
-//        alunos.forEach(aluno -> {
-//            System.out.println("Aluno: " + aluno);
-//        });
-//
-//        a1 = new Aluno("Desmond", 12345);
-//        a2 = new Aluno("Desmond", 54321);
-//
-//        System.out.println(a1.equals(a2));
+        alunos.forEach(aluno -> {
+            System.out.println("Aluno: " + aluno);
+        });
+
+        a1 = new Aluno("Desmond", 12345);
+        a2 = new Aluno("Desmond", 54321);
+
+        System.out.println(a1.equals(a2));
     }
 
 }
